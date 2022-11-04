@@ -1,2 +1,12 @@
-# react-chat-app
-💬 Chat app written in React.js and Firebase
+# REACT X CHAT APP
+
+Chat app project written in React.js and firebase v9.
+
+## Start project locally
+
+```bash
+git clone https://github.com/artemshchirov/react-chat-app.git
+cd react-chat-app
+npm install
+npm start
+```
