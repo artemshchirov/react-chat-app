@@ -17,20 +17,30 @@ const Register = () => {
   );
 
   const handleSubmitForm = (evt) => {
-    console.log('evt.target: ', evt.target);
+    console.log('values: ', values);
+
     evt.preventDefault();
   };
 
   return (
     <AuthLayout>
-        <Form id="form-signup">
-          <Label text="Name" name="text" type="text" />
-          <Label text="Email" name="email" type="email" />
-          <Label text="Password" name="password" type="password" />
-          <Label type="file" />
-          <AuthButton onClick={handleSubmitForm} />
-        </Form>
-
+      <Form id="form-signup">
+        <Label
+          text="display name"
+          name="name"
+          type="text"
+          onInput={handleChange}
+        />
+        <Label text="email" name="email" type="email" onInput={handleChange} />
+        <Label
+          text="password"
+          name="password"
+          type="password"
+          onInput={handleChange}
+        />
+        <Label text="file" name="file" type="file" />
+      </Form>
+      <AuthButton onClick={handleSubmitForm} />
     </AuthLayout>
   );
 };

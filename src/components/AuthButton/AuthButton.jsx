@@ -1,31 +1,34 @@
-import { Link } from 'react-router-dom';
-
+import { useLocation } from 'react-router-dom';
 import Button from '../Button/Button';
+import CustomLink from '../CustomLink/CustomLink';
+
+import { PAGES } from '../../utils/constants';
 
 import './AuthButton.scss';
 
 function AuthButton({ onClick, isDisabled = false }) {
-  const isSignIn = false;
+  const location = useLocation();
+  const isSignIn = location.pathname === PAGES.SIGNIN;
   const loaderButton = false;
   const textButton = isSignIn
     ? loaderButton
-      ? 'Вход...'
-      : 'Войти'
+      ? 'Sign in...'
+      : 'Sign in'
     : loaderButton
-    ? 'Регистрация...'
-    : 'Зарегистрироваться';
+    ? 'Sign up...'
+    : 'Sign up';
 
   const question = (
     <div className="auth__question">
       <p className="auth__question-text">
-        {isSignIn ? 'Ещё не зарегистрированы?' : 'Уже зарегистрированы?'}
+        {isSignIn ? 'Not a member yet?' : 'Already a member?'}
       </p>
-      <Link
+      <CustomLink
         className="auth__question-link"
-        to={isSignIn ? 'PAGES.SIGNUP' : 'PAGES.SIGNIN'}
+        path={isSignIn ? PAGES.SIGNUP : PAGES.SIGNIN}
       >
-        {isSignIn ? 'Регистрация' : 'Войти'}
-      </Link>
+        {isSignIn ? 'Sign up here!' : 'Log in here!'}
+      </CustomLink>
     </div>
   );
 

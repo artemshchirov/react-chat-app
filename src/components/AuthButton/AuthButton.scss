@@ -1,0 +1,31 @@
+.form__submit-button {
+  margin-top: 16px;
+  padding: 10px;
+  width: 100%;
+  min-height: 45px;
+  min-width: 260px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  background-color: #7b96ec;
+  border: none;
+}
+
+.auth {
+  &__question {
+    padding-top: 16px;
+    display: flex;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #5d5d8d;
+  }
+
+  &__question-text {
+    margin: 0;
+  }
+
+  &__question-link {
+    padding-left: 7px;
+  }
+}

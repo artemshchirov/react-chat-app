@@ -1,4 +1,10 @@
-.signup {
-  margin: 0 auto;
-  max-width: 50%;
+.auth {
+  background-color: #fff;
+  padding: 20px 60px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

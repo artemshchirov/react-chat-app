@@ -8,7 +8,7 @@ const Form = ({ className = '', children, onSubmit }) => {
 
   return (
     <form className={finalClassName} onSubmit={onSubmit} noValidate required>
-      {children}
+      <fieldset className="form__fieldset">{children}</fieldset>
     </form>
   );
 };

@@ -1,9 +1,14 @@
+import { useLocation } from 'react-router-dom';
+
 import Logo from '../../components/Logo/Logo';
+
+import { PAGES } from '../../utils/constants';
 
 import './AuthLayout.scss';
 
 const AuthLayout = ({ children }) => {
-  const isSignIn = 'false';
+  const location = useLocation();
+  const isSignIn = location.pathname === PAGES.SIGNIN;
 
   return (
     <main className="auth">
@@ -11,10 +16,9 @@ const AuthLayout = ({ children }) => {
         <div className="auth__wrapper">
           <div className="auth__logo">
             <Logo />
+            <h1 className="auth__title">ChatApp</h1>
           </div>
-          <h1 className="auth__title">
-            {isSignIn ? 'Glad to see you!' : 'Welcome!'}
-          </h1>
+          <p className="auth__subtitle">{isSignIn ? 'Login' : 'Register'}</p>
         </div>
         {children}
       </div>

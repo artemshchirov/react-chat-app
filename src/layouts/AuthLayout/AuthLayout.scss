@@ -1,9 +1,33 @@
 .auth {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-radius: 10px;
 
-  &__container {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__title {
+    margin: auto;
+    font-size: 24px;
+    font-weight: 500;
+    color: #5d5d8d;
+  }
+
+  &__subtitle {
+    margin: 0;
+    padding: 16px 0 0;
+    max-width: max-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #5d5d8d;
   }
 }

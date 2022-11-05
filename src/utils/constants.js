@@ -43,4 +43,10 @@ const VALIDATION_CONFIGS = {
   },
 };
 
-export { VALIDATION_CONFIGS, VALIDATION_PARAMS };
+const PAGES = {
+  SIGNUP: '/signup',
+  SIGNIN: '/signin',
+  MAIN: '/',
+};
+
+export { VALIDATION_CONFIGS, VALIDATION_PARAMS, PAGES };
