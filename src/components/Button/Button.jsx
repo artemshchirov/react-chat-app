@@ -1,8 +1,8 @@
 import './Button.scss';
 
 function Button({
-  text,
-  className,
+  text = '',
+  className = '',
   btnType = 'button',
   onClick = (f) => f,
   btnDisabled = false,

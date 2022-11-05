@@ -1,6 +1,6 @@
 # REACT X CHAT APP
 
-Chat app project written in React.js and firebase v9.
+Chat app project written in React.js, Sass and firebase v9.
 
 ## Start project locally
 

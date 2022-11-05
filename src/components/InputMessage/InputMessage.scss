@@ -1,0 +1,38 @@
+.input-msg {
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+
+  &__type {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #2f2d52;
+    font-size: 18px;
+
+    &::placeholder {
+      color: lightgrey;
+    }
+  }
+
+  &__send {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+  }
+
+  &__send-btn {
+    padding: 10px 15px;
+    color: white;
+    background-color: #8da4f1;
+  }
+}
