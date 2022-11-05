@@ -1,3 +1,5 @@
+@import '../../style';
+
 .navbar {
   padding: 10px 16px 10px 10px;
   min-height: 50px;
@@ -28,5 +30,10 @@
     background-color: #5d5d8d;
     color: #ddddf7;
     font-size: 10px;
+
+    @include tablet {
+      position: absolute;
+      bottom: 10px;
+    }
   }
 }
