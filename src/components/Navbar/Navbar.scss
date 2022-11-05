@@ -1,0 +1,32 @@
+.navbar {
+  padding: 10px 16px 10px 10px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f2d52;
+  color: #ddddf7;
+
+  &__user {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__avatar {
+    background-color: #ddddf7;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    margin: auto 0;
+  }
+
+  &__button {
+    background-color: #5d5d8d;
+    color: #ddddf7;
+    font-size: 10px;
+  }
+}

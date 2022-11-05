@@ -1,0 +1,17 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #a7bcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    width: 65%;
+    height: 80%;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    overflow: hidden;
+  }
+}

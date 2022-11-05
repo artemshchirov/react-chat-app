@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import Register from '../../pages/Register/Register';
 import Login from '../../pages/Login/Login';
+import Main from '../../pages/Main/Main';
 import Alert from '../Alert/Alert';
 
 import { PAGES } from '../../utils/constants';
@@ -13,12 +14,9 @@ function App() {
     <div className="page">
       <div className="page__container">
         <Routes>
-          {/* <div className="content-wrapper"> */}
           <Route path={PAGES.SIGNUP} element={<Register />} />
           <Route path={PAGES.SIGNIN} element={<Login />} />
-
-          {/* </div>
-        <div>Footer</div> */}
+          <Route path={PAGES.MAIN} element={<Main />} />
         </Routes>
         <Alert messageAlert={'messageAlert'} isActiveAlert={'isActiveAlert'} />
       </div>

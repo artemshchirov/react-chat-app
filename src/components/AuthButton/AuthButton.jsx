@@ -35,7 +35,7 @@ function AuthButton({ onClick, isDisabled = false }) {
   return (
     <>
       <Button
-        title={textButton}
+        text={textButton}
         btnType="submit"
         onClick={onClick}
         className={`button ${

@@ -1,7 +1,7 @@
 import './Button.scss';
 
 function Button({
-  title,
+  text,
   className,
   btnType = 'button',
   onClick = (f) => f,
@@ -19,7 +19,7 @@ function Button({
       onClick={onClick}
       disabled={btnDisabled}
     >
-      {title}
+      {text}
     </button>
   );
 }
