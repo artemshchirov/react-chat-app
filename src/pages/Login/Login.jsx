@@ -39,8 +39,7 @@ const Login = () => {
           <ErrorText type="auth">{errors.password}</ErrorText>
         )} */}
       </Form>
-
-      <AuthButton onClick={handleSubmitForm} />
+      <AuthButton type="submit" onClick={handleSubmitForm} />
     </AuthLayout>
   );
 };

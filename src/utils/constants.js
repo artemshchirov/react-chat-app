@@ -2,6 +2,7 @@ const VALIDATION_PARAMS = {
   REGEX: {
     NAME: /^[a-zа-яё-\s]+$/i,
     EMAIL: /[^@\s]+@[^@\s]+\.[^@\s]+/i,
+    FILE: /^.*\.(jpg|JPG|gif|GIF|doc|DOC|pdf|PDF|png|PNG)$/i,
   },
   MESSAGES: {
     NAME: {
@@ -16,19 +17,25 @@ const VALIDATION_PARAMS = {
       EN: 'Password field is empty',
       RU: 'Минимальная длина пароля: 1 символ',
     },
+    FILE: {
+      EN: 'File must be .jpg or .png',
+      RU: 'Файл должен быть .jpg или .png формата.',
+    },
   },
 };
 
 const VALIDATION_CONFIGS = {
   USER_DATA: {
-    INPUTS: ['name', 'email'],
+    INPUTS: ['name', 'email', 'file'],
     REGEX: {
       name: VALIDATION_PARAMS.REGEX.NAME,
       email: VALIDATION_PARAMS.REGEX.EMAIL,
+      file: VALIDATION_PARAMS.REGEX.FILE,
     },
     MESSAGES: {
       name: VALIDATION_PARAMS.MESSAGES.NAME.EN,
       email: VALIDATION_PARAMS.MESSAGES.EMAIL.EN,
+      file: VALIDATION_PARAMS.REGEX.FILE,
     },
   },
 

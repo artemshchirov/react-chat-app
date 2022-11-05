@@ -12,7 +12,7 @@ const AuthLayout = ({ children }) => {
 
   return (
     <main className="auth">
-      <div className="container auth__container">
+      <div className="auth__container">
         <div className="auth__wrapper">
           <div className="auth__logo">
             <Logo />

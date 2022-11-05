@@ -1,6 +1,6 @@
 import './Form.scss';
 
-const Form = ({ className = '', children, onSubmit }) => {
+const Form = ({ className = '', children, onSubmit = (f) => f }) => {
   let finalClassName = 'form';
   if (className) {
     finalClassName += ` ${className}`;

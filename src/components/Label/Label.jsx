@@ -16,7 +16,13 @@ const Label = ({
   if (isFile) {
     return (
       <>
-        <input style={{ display: 'none' }} type={type} id={type} />
+        <input
+          style={{ display: 'none' }}
+          name={name}
+          type={type}
+          id={type}
+          onInput={onInput}
+        />
         <label htmlFor="file" className="label label_type_file">
           <img src={addAvatarImg} alt="add avatar image" />
           <span>Add an avatar</span>
