@@ -1,0 +1,21 @@
+.alert {
+  position: fixed;
+  top: 75px;
+  right: 75px;
+  background-color: #3ddc84bf;
+  border-radius: 20px;
+  padding: 15px 25px;
+  transition: all 0.5s ease-in;
+  visibility: hidden;
+  opacity: 0;
+  max-width: 350px;
+
+  &__alert_active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__alert__text {
+    color: #fff;
+  }
+}
