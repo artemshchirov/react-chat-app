@@ -2,4 +2,29 @@
   background-color: #ddddf7;
   padding: 10px;
   height: calc(100% - 160px);
+  overflow-y: scroll;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  scroll-behavior: smooth;
+  transition: scrollbar-color 0.3s;
+
+  &:hover {
+    scrollbar-color: black transparent;
+  }
+
+  &:not(:hover)::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    transition: background 0.3s;
+    background: #5d5d8d90;
+  }
 }

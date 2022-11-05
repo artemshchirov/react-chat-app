@@ -1,0 +1,57 @@
+.message {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  &.owner {
+    flex-direction: row-reverse;
+
+    .message {
+      &__content {
+        align-items: flex-end;
+      }
+
+      &__text {
+        background-color: #8da4f1;
+        color: white;
+        border-radius: 10px 0 10px 10px;
+        max-width: max-content;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: grey;
+    font-weight: 300;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__content {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 10px 20px;
+    max-width: max-content;
+    background-color: white;
+    border-radius: 0px 10px 10px 10px;
+  }
+
+  &__image {
+    width: 50%;
+  }
+}

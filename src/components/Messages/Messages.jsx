@@ -4,7 +4,17 @@ import './Messages.scss';
 
 const Messages = () => {
   return (
-    <div className="messages">
+    <div className="messages custom-scrollbar">
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+
       <Message />
       <Message />
       <Message />
