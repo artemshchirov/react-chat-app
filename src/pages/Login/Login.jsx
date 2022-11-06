@@ -1,25 +1,45 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import AuthLayout from '../../layouts/AuthLayout/AuthLayout';
 import Form from '../../components/Form/Form';
 import Label from '../../components/Label/Label';
-
-import useFormAndValidation from '../../hooks/useFormAndValidation';
-import { VALIDATION_CONFIGS, VALIDATION_PARAMS } from '../../utils/constants';
-
-import './Login.scss';
-import Button from '../../components/Button/Button';
 import AuthButton from '../../components/AuthButton/AuthButton';
 
+import { auth } from '../../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
+import useFormAndValidation from '../../hooks/useFormAndValidation';
+import {
+  VALIDATION_CONFIGS,
+  VALIDATION_PARAMS,
+  PAGES,
+} from '../../utils/constants';
+
+import './Login.scss';
+
 const Login = () => {
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+
   const initValues = { email: '22', password: '33' };
   const { values, errors, isValid, handleChange } = useFormAndValidation(
     initValues,
     VALIDATION_CONFIGS.LOGIN
   );
 
-  const handleSubmitForm = (evt) => {
+  const handleSubmitForm = async (evt) => {
     console.log('values: ', values);
-
     evt.preventDefault();
+
+    const { email, password } = values;
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate(PAGES.MAIN);
+    } catch (err) {
+      console.error('Login handleSubmitForm error: ', err);
+      setError(true);
+    }
   };
 
   return (
