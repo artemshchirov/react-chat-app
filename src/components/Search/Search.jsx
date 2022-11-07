@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 
 import { AuthContext } from '../../context/AuthContext';
+import { ChatContext } from '../../context/ChatContext';
 
 import {
   serverTimestamp,
@@ -23,6 +24,8 @@ const Search = () => {
   const [error, setError] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
+  const { chat } = useContext(ChatContext);
+  const { dispatch } = useContext(ChatContext);
 
   const handleInputChange = (evt) => setUsername(evt.target.value);
 
@@ -38,13 +41,10 @@ const Search = () => {
 
     try {
       const querySnapshot = await getDocs(q);
-      console.log('querySnapshot: ', querySnapshot);
 
       querySnapshot.forEach((doc) => {
-        console.log('doc: ', doc);
         setUser(doc.data());
       });
-      console.log('user: ', user);
 
       setError(false);
     } catch (err) {
@@ -53,17 +53,17 @@ const Search = () => {
     }
   };
 
-  const handleSelect = async () => {
+  const handleSelect = async (user) => {
+    dispatch({ type: 'CHANGE_USER', payload: user });
+
     //check whether the group(chats in firestore) exists, if not create
     const combinedId =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
         : user.uid + currentUser.uid;
-    console.log('combinedId: ', combinedId);
 
     try {
       const res = await getDoc(doc(db, 'chats', combinedId));
-      console.log('try: ', res);
 
       if (!res.exists()) {
         // create a chat in chats collection
@@ -88,10 +88,6 @@ const Search = () => {
           [combinedId + '.date']: serverTimestamp(),
         });
       }
-
-      console.log('user: ', user);
-      console.log('currentUser: ', currentUser);
-      console.log('combinedId: ', combinedId);
       setError(false);
     } catch (err) {
       console.error('Search handleSelect err: ', err);
@@ -112,11 +108,11 @@ const Search = () => {
       </div>
       {error ? <span>User not found...</span> : null}
       {user ? (
-        <div className="chats__user" onClick={handleSelect}>
+        <div className="chats__user" onClick={() => handleSelect(user)}>
           <img className="chats__avatar" src={user.photoURL} alt="user pic" />
           <div className="chats__info">
             <span className="chats__username">{user.displayName}</span>
-            <p className="chats__message">Hello</p>
+            <p className="chats__message"></p>
           </div>
         </div>
       ) : null}

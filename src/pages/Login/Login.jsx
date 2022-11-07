@@ -29,7 +29,6 @@ const Login = () => {
   );
 
   const handleSubmitForm = async (evt) => {
-    console.log('values: ', values);
     evt.preventDefault();
 
     const { email, password } = values;
