@@ -22,7 +22,7 @@ const Login = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
-  const initValues = { email: '22', password: '33' };
+  const initValues = { email: '', password: '' };
   const { values, errors, isValid, handleChange } = useFormAndValidation(
     initValues,
     VALIDATION_CONFIGS.LOGIN
@@ -45,7 +45,7 @@ const Login = () => {
   return (
     <AuthLayout>
       <Form id="form-signup">
-        <Label text="email" name="email" type="email" onInput={handleChange} />
+        <Label text="email" name="email" type="email" onChange={handleChange} />
         {/* {errors.email && (
           <ErrorText type="auth">{errors.email}</ErrorText>
         )} */}
@@ -53,7 +53,7 @@ const Login = () => {
           text="password"
           name="password"
           type="password"
-          onInput={handleChange}
+          onChange={handleChange}
         />
         {/* {errors.password && (
           <ErrorText type="auth">{errors.password}</ErrorText>

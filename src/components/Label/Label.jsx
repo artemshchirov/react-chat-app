@@ -6,7 +6,7 @@ const Label = ({
   text,
   name,
   type,
-  onInput = (f) => f,
+  onChange = (f) => f,
   isValid = true,
   value,
 }) => {
@@ -21,7 +21,7 @@ const Label = ({
           name={name}
           type={type}
           id={type}
-          onInput={onInput}
+          onChange={onChange}
         />
         <label htmlFor="file" className="label label_type_file">
           <img src={addAvatarImg} alt="add avatar image" />
@@ -42,7 +42,7 @@ const Label = ({
         placeholder={text.toLowerCase()}
         required
         name={name}
-        onInput={onInput}
+        onChange={onChange}
         value={value}
       />
     </label>

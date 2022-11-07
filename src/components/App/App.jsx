@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Register from '../../pages/Register/Register';
@@ -11,6 +12,8 @@ import { PAGES } from '../../utils/constants';
 import './App.scss';
 
 const App = () => {
+  const [loading, setLoading] = useState(false);
+
   return (
     <div className="page">
       <div className="page__container">

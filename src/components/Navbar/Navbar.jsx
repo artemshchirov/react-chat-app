@@ -11,13 +11,12 @@ import { auth } from '../../firebase';
 
 import { PAGES } from '../../utils/constants';
 
-import avatar from '../../img/avatar.png';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log('currentUser: ', currentUser);
+
+  const { currentUser } = useContext(AuthContext);
 
   const handleLogout = () => {
     signOut(auth);
@@ -31,7 +30,7 @@ const Navbar = () => {
         <img
           className="navbar__avatar"
           src={currentUser.photoURL}
-          alt="profile avatar"
+          alt="user pic"
         />
         <span className="navbar__name">{currentUser.displayName}</span>
         <Button
