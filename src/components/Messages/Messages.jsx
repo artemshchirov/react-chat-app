@@ -15,7 +15,6 @@ const Messages = () => {
 
   useEffect(() => {
     const unsub = onSnapshot(doc(db, 'chats', chat.chatId), (doc) => {
-      console.log('doc.data(): ', doc.data());
       doc.exists() && setMessages(doc.data().messages);
     });
 
@@ -23,7 +22,7 @@ const Messages = () => {
   }, [chat.chatId]);
 
   return (
-    <div className="messages custom-scrollbar">
+    <div className="messages messages-scrollbar">
       {messages.map((m) => (
         <Message message={m} key={m.id} />
       ))}

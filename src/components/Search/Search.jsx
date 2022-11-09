@@ -43,6 +43,7 @@ const Search = () => {
       const querySnapshot = await getDocs(q);
 
       querySnapshot.forEach((doc) => {
+        console.log('Search doc.data(): ', doc.data());
         setUser(doc.data());
       });
 

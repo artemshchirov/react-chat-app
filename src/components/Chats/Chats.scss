@@ -1,5 +1,8 @@
 .chats {
-  flex: 2;
+  flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: calc(100% - 108px);
 
   &__user {
     padding: 10px;
@@ -32,5 +35,29 @@
     padding-top: 5px;
     font-size: 14px;
     color: lightgrey;
+  }
+}
+
+.chats-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  scroll-behavior: smooth;
+  transition: scrollbar-color 0.3s;
+
+  &:hover {
+    scrollbar-color: black transparent;
+  }
+
+  &:not(:hover)::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    transition: background 0.3s;
+    background: darkgray;
   }
 }

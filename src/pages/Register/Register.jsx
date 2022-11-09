@@ -40,14 +40,18 @@ const Register = () => {
 
   const handleSubmitForm = async (evt) => {
     evt.preventDefault();
-    const { name, email, password } = values;
+    const { email, password } = values;
+    let { name } = values;
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
       //Create a unique image name
       const date = new Date().getTime();
-      const storageRef = ref(storage, 'images/' + file.name + date);
+      const storageRef = ref(
+        storage,
+        'images/' + file.name.toLowerCase() + date
+      );
 
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
@@ -105,7 +109,10 @@ const Register = () => {
           onChange={(evt) => setFile(evt.target.files[0])}
         />
         {error ? (
-          <span style={{ color: 'red' }}> Something went wrong...</span>
+          <span style={{ color: 'red', padding: '20px 0 5px' }}>
+            {' '}
+            Something went wrong...
+          </span>
         ) : null}
       </Form>
       <AuthButton type="submit" onClick={handleSubmitForm} />
